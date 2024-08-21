@@ -18,8 +18,8 @@
 6. test_get_books_with_specific_genre_request_genre:
 Проверяет, что при запросе жанра показываются относящиеся к этому жанру книги
 
-7. test_get_books_genre_dict_not_empty:
-Проверяет, что если добавить жанр, то при запросе жанра возвращается не пустой словарь
+7. test_get_books_genre_returns_book_and_genre:
+Проверяет, что если добавить книгу и жанр, то при запросе возвращается словарь с ними
 
 8. test_get_books_for_children_no_adult_books_in_result:
 Проверяет, что если в books_genre добавлены только не подходяшие для детей жанры, то при запросе книг для детей возвращается пустой список
@@ -30,5 +30,5 @@
 10. test_delete_book_from_favorites_book_is_deleted:
 Проверяет, что добавленная книга успешно удаляется из списка
 
-11. test_get_list_of_favorites_books_list_not_empty:
+11. test_get_list_of_favorites_books_list_contains_added_book:
 Проверяет, что если добавить книгу в избранное, то при запросе избранного эта книга будет в списке
