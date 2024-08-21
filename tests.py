@@ -66,7 +66,7 @@ class TestBooksCollector:
         assert collector.favorites == []
 
     @pytest.mark.parametrize('book', ['Гордость и предубеждение и зомби'])
-    def test_get_list_of_favorites_books_list_not_empty(self, collector, add_book, book):
+    def test_get_list_of_favorites_books_list_contains_added_book(self, collector, add_book, book):
         collector.add_book_in_favorites(book)
 
-        assert book in collector.favorites
+        assert collector.get_list_of_favorites_books() == [book]
