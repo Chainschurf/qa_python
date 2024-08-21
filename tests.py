@@ -40,10 +40,10 @@ class TestBooksCollector:
         assert book in collector.get_books_with_specific_genre(genre)
 
     @pytest.mark.parametrize('book, genre', [['Гордость и предубеждение и зомби', 'Фантастика']])
-    def test_get_books_genre_dict_not_empty(self, collector, add_book, book, genre):
+    def test_get_books_genre_returns_book_and_genre(self, collector, add_book, book, genre):
         collector.set_book_genre(book, genre)
 
-        assert collector.books_genre != {}
+        assert collector.get_books_genre() == collector.books_genre
 
     @pytest.mark.parametrize('book, genre', [['Гордость и предубеждение и зомби', 'Ужасы']])
     def test_get_books_for_children_no_adult_books_in_result(self, collector, add_book, book, genre):
